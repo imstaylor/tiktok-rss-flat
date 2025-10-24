@@ -54,7 +54,7 @@ for v in sorted(tag_videos, key=lambda x: x.get("createTime", "0"), reverse=True
       <guid isPermaLink="true">{esc(link)}</guid>
       <pubDate>{pub}</pubDate>
       <author>{esc(author)}</author>
-      {"<enclosure url=\"" + esc(thumb) + "\" type=\"image/jpeg\" />" if thumb else ""}
+{('<enclosure url="' + esc(thumb) + '" type="image/jpeg" />') if thumb else ""}
       <description>{esc(title)}</description>
     </item>
     """)
