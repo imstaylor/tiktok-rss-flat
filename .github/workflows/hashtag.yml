@@ -34,6 +34,7 @@ jobs:
           python tools/hashtag_ukteacher.py
 
       - name: Commit RSS
-        run: |
-          git config user.name "github-actions[bot]"
-          git co
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update hashtag #ukteacher feed"
+          file_pattern: rss/*
